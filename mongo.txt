@@ -1,0 +1,44 @@
+Hola, he aqui los pasos para adaptar Mongo a Laravel.
+
+1. Instala Mongo Server, Mongo Shell
+2. Instala la extension de Mongo para PHP
+3. En el proyecto, ejecuta el comando "composer require jenssegers/mongodb:*"
+4. Dentro de "config/database.php" agrega en la seccion "connections":
+'mongodb' => [
+            'driver' => 'mongodb',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'options' => [
+                 'database' =>  env('DB_DATABASE') // sets the authentication database required by mongo 3
+             ]
+         ],
+4. Dentro del archivo ".env" reemplaza la seccion de MySQL por:
+DB_CONNECTION=mongodb
+DB_HOST=localhost
+DB_PORT=27017
+DB_DATABASE=laravel
+DB_USERNAME=Ismael
+DB_PASSWORD=ismaken
+5. Por cada modelo existente, cambia "use Illuminate\Database\Eloquent\Model" por "use Jenssegers\Mongodb\Eloquent\Model" y cambia "use Illuminate\Foundation\Auth\User as Authenticatable" por "use Jenssegers\Mongodb\Auth\User as Authenticatable"
+
+6. Dentro de la shell de Mongo, inserta:
+use laravel
+
+db.createUser(
+  {
+    user: "Ismael",
+    pwd: "ismaken",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, 
+             { role: "dbAdminAnyDatabase", db: "admin" }, 
+             { role: "readWriteAnyDatabase", db: "admin" } ]
+  }
+)
+
+7. Ejecuta "php artisan migrate"
+
+8. Para solucionar el error Call to a member function prepare() on null
+  1. Ir a vendedor/laravel/sanctum/src/PersonalAccessToken.php
+  2. Reemplazar 'use Illuminate\Database\Eloquent\Model;' por 'use Jenssegers\Mongodb\Eloquent\Model;'
