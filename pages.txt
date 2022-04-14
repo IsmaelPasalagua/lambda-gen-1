@@ -1,0 +1,83 @@
+-- Base de datos --
+
+--> Categorias
+    --> Formulario
+        --> Nueva categoria
+        --> Editar Categorias
+    --> Tabla
+        --> Listado de categorias
+            --> Botones Individuales
+                --> Editar
+                --> Eliminar
+        --> Botones globales
+            --> Nueva Crear
+
+--> Productos
+    --> Formulario
+        --> Nuevo Producto
+        --> Editar Producto
+    --> Tabla
+        --> Listado de productos
+            --> Botones Individuales
+                --> Editar
+                --> Eliminar
+                --> Detalles
+        --> Botones globales
+            --> Nuevo Crear
+    --> Detalles
+        --> Imagenes
+        --> Detalles
+
+--> Clientes
+    --> Formulario
+        --> Nuevo Cliente
+        --> Editar Cliente
+    --> Tabla
+        --> Listado de clientes
+            --> Botones Individuales
+                --> Editar
+                --> Eliminar
+                --> Detalles
+        --> Botones globales
+            --> Nuevo Crear
+    --> Detalles
+        --> Imagenes
+        --> Detalles
+        --> Productos
+
+--> Metodos de pago
+    --> Tabla
+        --> Listado de Metodos de pago
+
+--> Ventas
+    --> Formulario
+        --> Nueva Venta
+        --> Editar Venta
+    --> Tabla
+        --> Listado de Ventas
+            --> Botones Individuales
+                --> Editar
+                --> Eliminar
+                --> Detalles
+        --> Botones globales
+            --> Nuevo Crear
+    --> Detalles
+        --> Imagenes
+        --> Detalles
+        --> Productos
+        --> Detalle Producto
+        --> Cliente
+
+--> Usuarios
+    --> Formulario
+        --> Registro
+        --> Iniciar Sesion
+    --> Tabla
+        --> Listado de Usuarios
+            --> Botones Individuales
+                --> Eliminar
+        --> Botones globales
+            --> Nuevo Crear
+     --> Cierre de Sesion
+    
+
