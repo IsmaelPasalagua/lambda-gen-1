@@ -61,7 +61,7 @@ class AuthController extends ResponseController
         ];
 
         // Return response //
-        return $this->sendResponse($response, 'User logged in successfully.', 200);
+        return $this->sendResponse($response, 'User logged in successfully.');
     }
 
     // Sign out //
@@ -77,7 +77,7 @@ class AuthController extends ResponseController
         $user->tokens()->delete();
 
         // Return response //
-        return $this->sendResponse([], 'User logged out successfully.', 200);
+        return $this->sendResponse([], 'User logged out successfully.');
     }
 
     // Sign up //
@@ -125,6 +125,6 @@ class AuthController extends ResponseController
         ];
 
         // Return response //
-        return $this->sendResponse($response, 'User created successfully.', 200);
+        return $this->sendResponse($response, 'User created successfully.');
     }
 }

@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Validator;
 class ResponseController extends Controller
 {
     // Send response //
-    public function sendResponse($result, $message, $code)
+    public function sendResponse($result, $message)
     {
         $response = [
             'success' => true,
             'data'    => $result,
             'message' => $message,
-            'status' => $code,
+            'status' => 200
         ];
         return response()->json($response);
     }

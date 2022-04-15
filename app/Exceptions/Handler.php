@@ -67,6 +67,38 @@ class Handler extends ExceptionHandler
             ], 401);
         }
 
+        // exception TokenMismatchException
+        if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenMismatchException) {
+            return response()->json([
+                'message' => 'Token Mismatch',
+                'status' => 401,
+            ], 401);
+        }
+
+        // exception TokenExpiredException
+        if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException) {
+            return response()->json([
+                'message' => 'Token Expired',
+                'status' => 401,
+            ], 401);
+        }
+
+        // exception JWTException
+        if ($e instanceof \Tymon\JWTAuth\Exceptions\JWTException) {
+            return response()->json([
+                'message' => 'Token Invalid',
+                'status' => 401,
+            ], 401);
+        }
+
+        // exception Symfony\Component\Routing\Exception\RouteNotFoundException
+        if ($e instanceof \Symfony\Component\Routing\Exception\RouteNotFoundException) {
+            return response()->json([
+                'message' => "Route Not Found, try add 'Accept: application/json' to your request",
+                'status' => 404,
+            ], 404);
+        }
+
         // if any other exception
         $error = [
             'message' => $e->getMessage(),
