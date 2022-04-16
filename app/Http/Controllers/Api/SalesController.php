@@ -145,7 +145,7 @@ class SalesController extends ResponseController
         }
 
         // Create sale //
-        $sale = ProductDetails::create([
+        $sale = Sales::create([
             'customer_id' => $request->customer_id,
             'payment_method_id' => $request->payment_method_id,
             'total_price' => $request->total_price,
@@ -154,7 +154,7 @@ class SalesController extends ResponseController
         ]);
 
         // Check if sale was created //
-        if (is_null($product_detail)) {
+        if (is_null($sale)) {
             return $this->sendError('Sale could not be created.', ['id' => null]);
         }
 

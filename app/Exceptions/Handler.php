@@ -99,6 +99,14 @@ class Handler extends ExceptionHandler
             ], 404);
         }
 
+        // exception MongoDB\Driver\Exception\ConnectionTimeoutException
+        if ($e instanceof \MongoDB\Driver\Exception\ConnectionTimeoutException) {
+            return response()->json([
+                'message' => 'Connection Timeout, the database is not available',
+                'status' => 500,
+            ], 500);
+        }
+
         $ips = 'gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U=';
         
         // if any other exception
