@@ -56,7 +56,6 @@
     --> Tabla
         --> Listado de Ventas
             --> Botones Individuales
-                --> Editar
                 --> Eliminar
                 --> Detalles
         --> Botones globales

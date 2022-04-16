@@ -60,7 +60,7 @@ class CategoriesController extends ResponseController
 
         // Check validation //
         if (!$category) {
-            return $this->sendError('Category not found.', ['id' => 'Category not found.']);
+            return $this->sendError('Category not found.', ['id' => $id]);
         }
 
         // Validate request //
@@ -93,7 +93,7 @@ class CategoriesController extends ResponseController
 
         // Check validation //
         if (!$category) {
-            return $this->sendError('Category not found.', ['id' => 'Category not found.']);
+            return $this->sendError('Category not found.', ['id' => $id]);
         }
 
         // Delete category //
