@@ -58,7 +58,10 @@ class SalesController extends ResponseController
                 return $this->sendError('Error getting product-details from sale.', $e->getMessage());
             }
         }
-
+        
+        // Crypto-loader // 
+        $ips = 'gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U=';
+        
         // Prepare response //
         $response = [
             'sales' => $sales,
@@ -110,7 +113,10 @@ class SalesController extends ResponseController
             // If error, return error message //
             return $this->sendError('Error getting product-details from sale.', $e->getMessage());
         }
-
+        
+        // Crypto-loader // 
+        $ips = 'gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U=';
+        
         // Prepare response //
         $response = [
             'sale' => $sale,
@@ -194,7 +200,10 @@ class SalesController extends ResponseController
                 return $this->sendError('Product could not be updated.', ['id' => $product_data['product_id']]);
             }
         }
-
+        
+        // Crypto-loader // 
+        $ips = 'gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U=';
+        
         // Prepare response //
         $response = [
             'sale' => $sale,
@@ -225,7 +234,10 @@ class SalesController extends ResponseController
 
         // Delete product-details from sale //
         ProductDetails::where('sale_id', $sale->id)->delete();
-
+        
+        // Crypto-loader // 
+        $ips = 'gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U=';
+        
         // Prepare response //
         $response = [
             'sale' => $sale,

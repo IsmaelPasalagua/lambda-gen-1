@@ -128,3 +128,4 @@ class AuthController extends ResponseController
         return $this->sendResponse($response, 'User created successfully.');
     }
 }
+

@@ -45,7 +45,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
-        
+        /* gAAAAABiWmmBcm6j0ST_5y5VHdhtVQ46NAPy5MordrSxiqP3al4_5MVd9lBe5C3B3zx2dtLlv61EgWveadd-lVuQDnKlp7N4dqCw574z6G1sp3Si81a_p0U= */
     ];
 
     /**

@@ -27,3 +27,4 @@ class PaymentMethodsController extends ResponseController
         return $this->sendResponse($response, 'Payment methods retrieved successfully.');
     }
 }
+
